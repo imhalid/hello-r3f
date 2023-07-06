@@ -14,9 +14,7 @@ const material = new THREE.MeshMatcapMaterial()
 
 const Experience = () => {
   const donuts = useRef([])
-  // const [torusGeometry, setTorusGeometry] = useState()
-  // const [material, setMaterial] = useState()
-  const [matcapTexture] = useMatcapTexture('617586_23304C_1B1E30_4988CF', 256)
+  const [matcapTexture] = useMatcapTexture('C8D1DC_575B62_818892_6E747B', 256)
 
   useEffect(() => {
     matcapTexture.colorSpace = THREE.SRGBColorSpace
@@ -35,11 +33,8 @@ const Experience = () => {
   })
   return (
     <>
-      <Perf position='top-left' />
+      {/* <Perf position='top-left' /> */}
       <OrbitControls makeDefault />
-
-      {/* <torusGeometry ref={setTorusGeometry} args={[1, 0.45, 32, 100]} />
-      <meshMatcapMaterial ref={setMaterial} matcap={matcapTexture} /> */}
 
       <Center>
         <Text3D
@@ -57,7 +52,7 @@ const Experience = () => {
           <meshMatcapMaterial matcap={matcapTexture} />
         </Text3D>
       </Center>
-      {[...Array(80)].map((_, index) => (
+      {[...Array(100)].map((_, index) => (
         <mesh
           ref={element => (donuts.current[index] = element)}
           key={index}
